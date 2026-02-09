@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --accent-green: #16a34a;
+  --industrial-base: #030303;
+  --industrial-panel: rgba(12, 12, 12, 0.92);
+  --industrial-border: rgba(255, 255, 255, 0.15);
+}
+
+body {
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  background-color: #000;
+  color: #f7fafc;
+  min-height: 100vh;
+}
+
+.industrial-panel {
+  border-radius: 34px;
+  border: 1px solid var(--industrial-border);
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.95), rgba(5, 5, 5, 0.75));
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(24px);
+}
+
+.industrial-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+}
+
+.reduced-motion {
+  transition-duration: 0ms !important;
+}
+
+.scroll-track {
+  animation: horizontal-scroll 24s linear infinite;
+}
+
+.scroll-track-reverse {
+  animation: horizontal-scroll-reverse 24s linear infinite;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes horizontal-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes horizontal-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
