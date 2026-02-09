@@ -16,7 +16,7 @@ export const SectionHeading = ({
   level,
 }: SectionHeadingProps) => {
   const reduceMotion = useReducedMotion()
-  const HeadingTag: keyof JSX.IntrinsicElements = level ?? "h2"
+  const HeadingTag = level ?? "h2"
 
   return (
     <motion.div
