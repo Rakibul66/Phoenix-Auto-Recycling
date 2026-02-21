@@ -9,7 +9,6 @@ export const Footer = () => (
       <div className="flex flex-col gap-2">
         <p className="text-xs uppercase tracking-[0.3em] text-neutral-gray">Licensed | Phoenix</p>
         <p className="text-base font-semibold text-white">{SITE.name}</p>
-        <p>{SITE.address}</p>
         <a href={SITE.phoneLink} className="text-white">
           {SITE.phone}
         </a>
@@ -26,7 +25,6 @@ export const Footer = () => (
           WhatsApp sales
         </a>
         <a href={SITE.phoneLink}>{SITE.phone}</a>
-        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
       </div>
       <div className="flex flex-col gap-1">
         <p className="font-semibold text-white">Hours</p>

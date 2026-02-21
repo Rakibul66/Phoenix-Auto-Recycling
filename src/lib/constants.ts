@@ -3,11 +3,9 @@ export const SITE = {
   phone: "+1 (602) 386-7868",
   phoneLink: "tel:+16023867868",
   whatsapp: "https://wa.me/16023867868",
-  email: "cashfortrashedcars@gmail.com",
   city: "Phoenix",
   state: "Arizona",
   zip: "85004",
-  address: "4624 S 31st Ave, Phoenix, AZ 85041",
   url: "https://phoenixautorecycling.com",
   hours: [
     { label: "Mon - Fri", value: "7:00 AM - 7:00 PM" },

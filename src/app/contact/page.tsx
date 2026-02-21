@@ -1,4 +1,4 @@
-import { Clock4, Globe, MapPin, Phone, Mail, MessageSquare } from "lucide-react"
+import { Clock4, Globe, Phone, MessageSquare } from "lucide-react"
 import { SectionHeading } from "@/components/common/SectionHeading"
 import { ContactForm } from "@/components/forms/ContactForm"
 import { SITE } from "@/lib/constants"
@@ -12,7 +12,6 @@ export const metadata = buildMetadata({
 
 const contactOptions = [
   { label: "Call", detail: SITE.phone, href: SITE.phoneLink, Icon: Phone },
-  { label: "Email", detail: SITE.email, href: `mailto:${SITE.email}`, Icon: Mail },
   { label: "WhatsApp", detail: "Live Chat", href: SITE.whatsapp, Icon: MessageSquare, external: true },
 ]
 
@@ -29,7 +28,7 @@ export default function ContactPage() {
       <div className="mt-12 grid gap-12 lg:grid-cols-5">
         {/* Left Column: Form (3/5 width) */}
         <div className="lg:col-span-3">
-          <div className="rounded-2xl bg-neutral-900/50 p-8 border border-white/5">
+          <div className="rounded-2xl border border-white/5 bg-neutral-900/50 p-5 sm:p-8">
             <ContactForm />
           </div>
         </div>
@@ -61,19 +60,16 @@ export default function ContactPage() {
           {/* Business Details */}
           <div className="space-y-6 rounded-xl bg-white/5 p-6 text-sm">
             <div className="flex gap-4">
-              <MapPin className="text-primary shrink-0" size={18} />
-              <div>
-                <p className="font-semibold text-white">Address</p>
-                <p className="text-neutral-400">{SITE.address}</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
               <Clock4 className="text-primary shrink-0" size={18} />
               <div>
                 <p className="font-semibold text-white">Hours</p>
-                <p className="text-neutral-400">
-                  {SITE.hours.map((h) => `${h.label}: ${h.value}`).join(" | ")}
-                </p>
+                <div className="space-y-1 text-neutral-400">
+                  {SITE.hours.map((h) => (
+                    <p key={h.label}>
+                      {h.label}: {h.value}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="flex gap-4">

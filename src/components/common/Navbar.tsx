@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Phone, Menu, X } from "lucide-react"
-import { SITE } from "@/lib/constants"
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -23,7 +22,9 @@ export const Navbar = () => {
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
             <Phone className="h-6 w-6 text-primary" />
           </div>
-          <p className="font-semibold text-white">Phoenix Auto Recycling</p>
+          <p className="max-w-[11rem] text-sm font-semibold leading-tight text-white sm:max-w-none sm:text-base">
+            Phoenix Auto Recycling
+          </p>
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm font-semibold text-white lg:flex">

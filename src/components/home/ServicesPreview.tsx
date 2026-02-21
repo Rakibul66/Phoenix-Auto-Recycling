@@ -7,29 +7,37 @@ import { ArrowUpRight } from "lucide-react"
 
 const oldCarScenes = [
   {
-    title: "Desert Rust Belt",
-    subtitle: "High-mileage sedans with instant estimates.",
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1200&q=60",
+    title: "Desert Yard #01",
+    subtitle: "Fast inspection with same-day quote windows.",
+    image: "/a.webp",
     badge: "Rust & Roll",
     stats: ["Same-day offer", "Quick tow"],
     preview: "📸 Uploaded 3m ago"
   },
   {
-    title: "Sun-Bleached Trucks",
-    subtitle: "Tractors and haulers that still hold value.",
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=60",
+    title: "Desert Yard #02",
+    subtitle: "Dispatch-ready previews for instant routing.",
+    image: "/b.webp",
     badge: "Desert Heavy",
     stats: ["Midnight pickup", "Certified payout"],
     preview: "📸 Uploaded 12m ago"
   },
   {
-    title: "Classic Cruisers",
-    subtitle: "Vintage rides cleaned out for bold cash offers.",
-    image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=60",
+    title: "Desert Yard #03",
+    subtitle: "Photo-first valuation with clear payout terms.",
+    image: "/c.webp",
     badge: "Legacy Lot",
     stats: ["Full inspection", "Title handled"],
     preview: "📸 Uploaded 25m ago"
-  }
+  },
+  {
+    title: "Desert Yard #04",
+    subtitle: "Rapid response pickup coordination from preview.",
+    image: "/d.webp",
+    badge: "Recovery Lane",
+    stats: ["Live review", "Fast payout"],
+    preview: "📸 Uploaded 31m ago"
+  },
 ]
 
 export const ServicesPreview = () => {
@@ -60,7 +68,7 @@ export const ServicesPreview = () => {
       </div>
 
       <motion.div
-        className="grid gap-6 md:grid-cols-3"
+        className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
         initial={reduceMotion ? {} : "hidden"}
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
@@ -113,61 +121,6 @@ export const ServicesPreview = () => {
             </div>
           </motion.article>
         ))}
-      </motion.div>
-
-      <motion.div
-        className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]"
-        initial={reduceMotion ? {} : "hidden"}
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-      >
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/5 bg-neutral-900/50">
-          <div className="relative h-60 w-full bg-neutral-900/60">
-            <Image
-              src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=60"
-              alt="Uploaded junk car preview"
-              fill
-              className="object-cover opacity-80"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/70" />
-            <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
-              <div className="flex items-center justify-between">
-                <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">Uploaded Image</p>
-                <span className="rounded-full border border-white/20 bg-black/60 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.3em]">
-                  Verified
-                </span>
-              </div>
-              <div className="space-y-2">
-                <p className="text-2xl font-black uppercase tracking-tight">Scrap Car Snapshot</p>
-                <p className="text-sm text-neutral-200">
-                  Get instant clarity when you drop a photo. Dispatch previews the vehicle, confirms ETA, and adds it to the nightly pickup slate.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-4 rounded-[2.5rem] border border-white/5 bg-neutral-900/50 p-8">
-          <h4 className="text-lg font-black uppercase tracking-tight text-white">Upload + Preview</h4>
-                <p className="text-sm leading-relaxed text-neutral-400">
-                  Snap, upload, and preview—the dispatch feed never loses focus on the car.
-                </p>
-          <div className="flex flex-col gap-3 rounded-2xl border border-white/5 bg-black/60 p-4 text-[12px] uppercase tracking-[0.3em] text-neutral-200">
-            <span className="flex items-center gap-2 text-primary">
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              Live dispatcher review
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-white/30" />
-              Seamless WhatsApp upload
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-white/30" />
-              Secure same-day payout
-            </span>
-          </div>
-        </div>
       </motion.div>
     </section>
   )

@@ -11,7 +11,6 @@ export const buildLocalBusinessSchema = () => ({
   telephone: SITE.phone,
   address: {
     "@type": "PostalAddress",
-    streetAddress: SITE.address,
     addressLocality: SITE.city,
     addressRegion: SITE.state,
     postalCode: SITE.zip,

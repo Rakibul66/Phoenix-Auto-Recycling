@@ -1,33 +1,28 @@
 "use client"
 
 import Image from "next/image"
-import { motion } from "framer-motion"
 import { Phone, MessageSquare, Clock, ShieldCheck } from "lucide-react"
 import { CTAButton } from "@/components/common/CTAButton"
 import { SITE } from "@/lib/constants"
 
 export const CallBanner = () => (
-  <section className="relative overflow-hidden rounded-[2.5rem] border border-white/5 bg-neutral-900/40 p-1">
+  <section className="relative overflow-hidden border-y border-white/5 bg-black py-8">
     {/* Background Decorative Glows */}
     <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-primary/10 blur-[100px]" />
     <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-primary/5 blur-[100px]" />
 
-    <div className="relative z-10 grid gap-8 overflow-hidden rounded-[2.3rem] bg-black/40 p-8 md:grid-cols-[0.4fr_1fr] md:p-12">
+    <div className="relative z-10 mx-auto grid max-w-6xl gap-8 bg-black px-4 py-8 md:grid-cols-[0.4fr_1fr] md:px-6 md:py-10">
       
       {/* 1. Visual Image Hub */}
       <div className="flex flex-col items-center justify-center gap-6">
-        <div className="group relative h-56 w-56">
-          {/* Animated Background Rings */}
-          <div className="absolute inset-0 animate-ping rounded-full bg-primary/20 opacity-20 duration-[3s]" />
-          <div className="absolute inset-4 rounded-full border border-primary/30 bg-primary/5 shadow-[0_0_30px_rgba(21,178,91,0.1)]" />
-          
-          <div className="relative h-full w-full p-4 transition-transform duration-500 group-hover:scale-110">
+        <div className="relative h-56 w-56">
+          <div className="absolute inset-0 rounded-full border border-primary/25 bg-primary/5 shadow-[0_0_40px_rgba(21,178,91,0.14)]" />
+          <div className="absolute inset-3 overflow-hidden rounded-full border border-white/10 bg-black">
             <Image
-              src="/tow-truck.png"
+              src="/b.webp"
               alt="Dispatch Hub"
-              className="h-full w-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
-              width={220}
-              height={220}
+              fill
+              className="object-cover object-center"
               priority
             />
           </div>
@@ -35,7 +30,7 @@ export const CallBanner = () => (
         
         {/* Status Badge */}
         <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-md">
-          <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+          <div className="h-2 w-2 rounded-full bg-primary" />
           <span className="text-[10px] font-bold uppercase tracking-widest text-white">Live Dispatcher Online</span>
         </div>
       </div>
